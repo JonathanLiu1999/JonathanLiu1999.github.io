@@ -3,13 +3,11 @@ layout: page
 title: About
 permalink: /about/
 ---
+Hi,
 
-Some information about you!
+This is Jonathan Liu, a third year student at UCLA. I am a Statistics major with a minor in Mathematics. I love basketball and data science.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[liu.jonathan98@gmail.com](mailto:liu.jonathan98@gmail.com)
