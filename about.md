@@ -11,7 +11,7 @@ permalink: /about/
 
 Hi,
 
-This is Jonathan Liu, a third year student at UCLA. I am a Statistics major with a minor in Mathematics. I love basketball and data science.
+This is Jonathan Liu, a fourth year student at UCLA. I am a Statistics major with a minor in Mathematics. I love basketball and data science.
 
 
 
