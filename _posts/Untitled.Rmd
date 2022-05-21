@@ -1,0 +1,46 @@
+---
+title: "test_format"
+author: "Yiran Liu"
+date: "5/21/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+
+pseudo-code:
+
+Input:
+  # g: A cost function:\
+  # alpha choice: If it is “diminishing”, execute random search with diminishing\
+  # steplength. If it is a numerical value, let it be the fixed steplength (default: 1).\
+  # max its: The maximum number of iteration (default: 100)\
+  # w0: An initial point\
+  # tol: The tolerance for the stop criteria (default: 10−5)\
+  # 
+  # output: list object\
+  # weight history: A n × 2 matrix for weight history\
+  # cost history: A vector for corresponding cost function history\
+  
+  w1<- w0[1]\
+  w2<- w0[2]\
+  weight_history_w1<- w1\
+  weight_history_w2<- w2\
+  cost_history<- g(w1,w2)\
+  current_value <- g(w1, w2)\
+
+For each iteration, 
+  we want to try the four directions (North, West, East, South) times learning rate (step length)   and this gives the distance)
+  Among the four new coordinates, evaluate them by plugging into g
+  if the new cost and current cost is too small, terminate the algorithm
+  find the one gives the least cost and comparing to the current cost, replace the current cost
+  if it is smaller than the current cost and also save the coordinates so we can update the        current coordinate and save the new coordinates into weight_history
+  save the cost history
+  
+return cost history and weight_history
+
+

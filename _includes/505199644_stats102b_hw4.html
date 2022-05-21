@@ -174,8 +174,8 @@ pre code {
 <p><strong>1</strong></p>
 <p><strong>a</strong></p>
 <p>pseudo-code:</p>
-<p>Input: # g: A cost function: # alpha choice: If it is “diminishing”, execute random search with diminishing # steplength. If it is a numerical value, let it be the fixed steplength (default: 1). # max its: The maximum number of iteration (default: 100) # w0: An initial point # tol: The tolerance for the stop criteria (default: 10−5) # # output: list object # weight history: A n × 2 matrix for weight history # cost history: A vector for corresponding cost function history</p>
-<p>w1&lt;- w0[1] w2&lt;- w0[2] weight_history_w1&lt;- w1 weight_history_w2&lt;- w2 cost_history&lt;- g(w1,w2) current_value &lt;- g(w1, w2)</p>
+<p>Input: # g: A cost function:\ # alpha choice: If it is “diminishing”, execute random search with diminishing\ # steplength. If it is a numerical value, let it be the fixed steplength (default: 1).\ # max its: The maximum number of iteration (default: 100)\ # w0: An initial point\ # tol: The tolerance for the stop criteria (default: 10−5) # # output: list object\ # weight history: A n × 2 matrix for weight history\ # cost history: A vector for corresponding cost function history\</p>
+<p>w1&lt;- w0[1]\ w2&lt;- w0[2]\ weight_history_w1&lt;- w1\ weight_history_w2&lt;- w2\ cost_history&lt;- g(w1,w2)\ current_value &lt;- g(w1, w2)\</p>
 <p>For each iteration, we want to try the four directions (North, West, East, South) times learning rate (step length) and this gives the distance) Among the four new coordinates, evaluate them by plugging into g if the new cost and current cost is too small, terminate the algorithm find the one gives the least cost and comparing to the current cost, replace the current cost if it is smaller than the current cost and also save the coordinates so we can update the current coordinate and save the new coordinates into weight_history save the cost history</p>
 <p>return cost history and weight_history</p>
 <p><strong>b</strong></p>
@@ -222,7 +222,7 @@ plot(x = 1:60, y = v2[[2]][1:60], type = &quot;b&quot;, col = &quot;blue&quot;, 
 
 v2[[2]][dim(v2[[1]])[1]]</code></pre>
 <pre><code>## [1] 1.054639e-30</code></pre>
-<pre class="r"><code># As we can see the global minimum will be achieve with 
+<pre class="r"><code># As we can see the global minimum will be achieve with
 for (i in v2[[1]][dim(v2[[1]])[1],]){
   print(all.equal(i,0))
 }</code></pre>
@@ -244,27 +244,27 @@ for (i in v2[[1]][dim(v2[[1]])[1],]){
   # alpha choice: If it is “diminishing”, execute random search with diminishing
   # steplength. If it is a numerical value, let it be the fixed steplength (default: 1).
   # max its: The maximum number of iteration (default: 100)
-  # 
+  #
   # w0: An initial point
   # tol: The tolerance for the stop criteria (default: 10−5)
-  # 
+  #
   # output: list object
   # weight history: A n × 2 matrix for weight history
   # cost history: A vector for corresponding cost function history
-  
+
   w1&lt;- w0[1]
   w2&lt;- w0[2]
   weight_history_w1&lt;- w1
   weight_history_w2&lt;- w2
   cost_history&lt;- g(w1,w2)
   current_value &lt;- g(w1, w2)
-  
+
   if(alpha_choice == &quot;diminishing&quot;){
     alpha_choice&lt;- 1/(1:max_its)
   }else{
     alpha_choice&lt;- rep(alpha_choice, max_its)
   }
-  
+
   for(i in 1:max_its){
     if (i%%2 == 0){
        # evaluating g function two directions
@@ -280,7 +280,7 @@ for (i in v2[[1]][dim(v2[[1]])[1],]){
       cost_history&lt;- c(cost_history, g(w1, w2))
     }
     }
-    
+
     else{
           # evaluating g function two directions
      wc &lt;- w2-alpha_choice[i]
@@ -295,13 +295,13 @@ for (i in v2[[1]][dim(v2[[1]])[1],]){
       cost_history&lt;- c(cost_history, g(w1, w2))
     }
     }
-   
+
   }
-  
+
   weight_history = cbind(weight_history_w1, weight_history_w2)
   output &lt;- list(weight_history, cost_history)
   output
- 
+
   }</code></pre>
 <p><strong>b</strong></p>
 <pre class="r"><code>g&lt;- function(w1,w2) w1^2+w2^2+2
@@ -357,11 +357,11 @@ alpha_choice&lt;- 1
   weight_history_w1&lt;- w1
   weight_history_w2&lt;- w2
 
-  
+
 for (i in 1:max_its){
   current_value = g(w1,w2)
   if (i%%2 == 1){
-    
+
     New_w1&lt;- alpha_choice*(-1/2*w2)# take Derivative with respect to w1 and solve w1 by setting to 0
     if (abs((g(New_w1,w2) - current_value)) &lt; tol) break
     if (g(New_w1,w2) &lt; current_value ){
@@ -378,7 +378,7 @@ for (i in 1:max_its){
       weight_history_w2 = c( weight_history_w2, w2)
     }
   }
-  
+
 }
 
 weight_history = rbind(weight_history_w1,weight_history_w2)
@@ -403,11 +403,11 @@ alpha_choice&lt;- 1/(1:max_its)
   weight_history_w1&lt;- w1
   weight_history_w2&lt;- w2
 
-  
+
 for (i in 1:max_its){
   current_value = g(w1,w2)
   if (i%%2 == 1){
-    
+
     New_w1&lt;- alpha_choice[i]*(-1/2*w2)# take Derivative with respect to w1 and solve w1 by setting to 0
     if (abs((g(New_w1,w2) - current_value)) &lt; tol) break
     if (g(New_w1,w2) &lt; current_value ){
@@ -424,7 +424,7 @@ for (i in 1:max_its){
       weight_history_w2 = c( weight_history_w2, w2)
     }
   }
-  
+
 }
 
 weight_history = rbind(weight_history_w1,weight_history_w2)
@@ -453,28 +453,28 @@ points(weight_history[1,], weight_history[2,],type = &quot;b&quot;, col=&quot;bl
   # alpha choice: If it is “diminishing”, execute random search with diminishing
   # steplength. If it is a numerical value, let it be the fixed steplength (default: 1).
   # max its: The maximum number of iteration (default: 100)
-  # 
+  #
   # w0: An initial point
   # tol: The tolerance for the stop criteria (default: 10−5)
-  # 
+  #
   # output: list object
   # weight history: A n × 2 matrix for weight history
   # cost history: A vector for corresponding cost function history
-  
-  
+
+
   if(alpha_choice == &quot;diminishing&quot;){
     alpha_choice&lt;- 1/(1:max_its)
   }else{
     alpha_choice&lt;- rep(alpha_choice, max_its)
   }
-  
+
 if (length(w0) == 2){
-  
+
 
 w1&lt;- w0[1]
 w2&lt;- w0[2]
 weight_history_w1&lt;- w1
-weight_history_w2&lt;- w2               
+weight_history_w2&lt;- w2
 cost_history&lt;- g(w1,w2)
 current_value &lt;- g(w1, w2)
 
@@ -492,14 +492,14 @@ current_value &lt;- g(w1, w2)
      cost_history = c(cost_history,current_value)
 
    }
-   
-   
-   
+
+
+
  }
     weight_history = cbind(weight_history_w1, weight_history_w2)
-  
+
 }else{
-  
+
 
 weight_history &lt;- w0
 cost_history&lt;- g(w0)
@@ -519,10 +519,10 @@ current_value &lt;- g(w0)
   }
 
 }
-  
+
   output &lt;- list(weight_history, cost_history)
   return(output)
- 
+
 }</code></pre>
 <p><strong>b</strong></p>
 <p>As we can see from the plot, when the step length is 1, we can find the global minimum the fastest (with the least number of iterations). If we are doing the same numbers of iterations, with a step length of 0.1 and 0.01, our algorithm cannot find the global minimum.</p>
@@ -633,7 +633,7 @@ v</code></pre>
 ## [25,]          1.004722          1.004722
 ## [26,]          1.003778          1.003778
 ## [27,]          1.003022          1.003022
-## 
+##
 ## [[2]]
 ##  [1] 6.000000 5.280000 4.819200 4.524288 4.335544 4.214748 4.137439 4.087961
 ##  [9] 4.056295 4.036029 4.023058 4.014757 4.009445 4.006045 4.003869 4.002476
@@ -718,7 +718,7 @@ v</code></pre>
 ## [54,]         0.9999781          1.000007
 ## [55,]         0.9999825          1.000006
 ## [56,]         0.9999860          1.000005
-## 
+##
 ## [[2]]
 ##  [1] 14.000000 10.400000  8.096000  6.621440  5.677722  5.073742  4.687195
 ##  [8]  4.439805  4.281475  4.180144  4.115292  4.073787  4.047224  4.030223
@@ -760,23 +760,23 @@ weight_history_w2 = w2
 cost_history = cv
 
 for (i in 1:max_its){
-  
+
   a = d(w1,w2,0.3,d_p)[1]
   b = d(w1,w2,0.3,d_p)[2]
- 
+
   w1_candidate = w1 + alpha_choice * a
 
-  
-  
+
+
   w2_candidate = w2 + alpha_choice * b
 
    d_p =matrix(c(a,b),nrow = 2)
 
-  
-  
+
+
   if(abs(g(w1_candidate,w2_candidate) -cv) &lt;= tol) break
   if(g(w1_candidate,w2_candidate)&lt;cv){
-    
+
 
      w1 = w1_candidate
      w2 = w2_candidate
@@ -784,12 +784,12 @@ for (i in 1:max_its){
      weight_history_w2 = c(weight_history_w2,w2)
      cv = g(w1,w2)
      cost_history = c(cost_history,cv)}
-     
-    
-    
+
+
+
   }
 
-  
+
 
 xgrid &lt;- seq(-20, 20, 0.1)
 ygrid &lt;- seq(-4, 4, 0.1)
@@ -828,10 +828,10 @@ weight_history_w2 = w2
 cost_history = cv
 
 for (i in 1:max_its){
-  
+
   a = d(w1,w2,0.3,d_p)[1]
   b = d(w1,w2,0.3,d_p)[2]
- 
+
   w1_candidate = w1 + alpha_choice * a
 
   w2_candidate = w2 + alpha_choice * b
@@ -840,16 +840,16 @@ for (i in 1:max_its){
 
   if(abs(g(w1_candidate,w2_candidate) -cv) &lt;= tol) break
   if(g(w1_candidate,w2_candidate)&lt;cv){
-    
+
      w1 = w1_candidate
      w2 = w2_candidate
      weight_history_w1 = c(weight_history_w1,w1)
      weight_history_w2 = c(weight_history_w2,w2)
      cv = g(w1,w2)
      cost_history = c(cost_history,cv)}
-     
+
   }
-  
+
 ygrid &lt;- seq(-4, 4, 0.1)
 xgrid&lt;- seq(-25, 25, 0.1)
 
