@@ -18,3 +18,11 @@ This is Jonathan Liu, a fourth year student at UCLA. I am a Statistics major wit
 ### Contact me
 
 [liu.jonathan98@gmail.com](mailto:liu.jonathan98@gmail.com)
+
+
+
+
+
+#<object data="/images/homework4.pdf" width="720" height="1000" type='application/pdf'/>
+
+### My solution below
