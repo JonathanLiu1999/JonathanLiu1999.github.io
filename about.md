@@ -11,10 +11,20 @@ permalink: /about/
 
 Hi,
 
-This is Jonathan Liu, a fourth year student at UCLA. I am a Statistics major with a minor in Mathematics. I love basketball and data science.
+This is Jonathan Liu, I graduated from UCLA with a major in Statistics and minor in Math. I am currently a PhD candidate in the Division of Computational & Data Sciences (DCDS) at Washington University in St. Louis.
+
+
+You can view my CV here: 
+
+<a href="https://drive.google.com/file/d/1PDUaz5NYOoV8jY-0CUMdoVGrcYTJf7Bh/view?usp=drive_link" target="_blank">
+    View My CV
+</a>
+
 
 
 
 ### Contact me
 
 [liu.jonathan98@gmail.com](mailto:liu.jonathan98@gmail.com)
+
+
