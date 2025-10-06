@@ -23,9 +23,7 @@ You can view my CV here:
 
 publications:
 
-1.
-2.
-3.
+
 
 
 ### Contact me
