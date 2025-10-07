@@ -16,7 +16,7 @@ This is Jonathan Liu, I graduated from UCLA with a major in Statistics and minor
 
 You can view my CV here: 
 
-<a href="https://drive.google.com/file/d/1B0wiY5pKnnEsqtWxdy2gxdk07IvvD039/view?usp=drive_link" target="_blank">
+<a href="https://drive.google.com/file/d/1exhBJb0mm4lYcAuYXySmwNtKOou3OQSN/view?usp=drive_link" target="_blank">
     View My CV
 </a>
 
